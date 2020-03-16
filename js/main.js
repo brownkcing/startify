@@ -1,13 +1,7 @@
-/*
-* Template Name: SoftLand
-* Template URL: https://bootstrapmade.com/softland-bootstrap-app-landing-page-template/
-* License: https://bootstrapmade.com/license/
-*/
-
 (function ($) {
   "use strict";
-
-  // Back to top button
+	
+  // Smooth Scroll
   $(window).scroll(function() {
     if ($(this).scrollTop() > 100) {
       $('.back-to-top').fadeIn('slow');
@@ -19,6 +13,31 @@
     $('html, body').animate({scrollTop : 0},1500, 'easeInOutExpo');
     return false;
   });
+
+  $('.pricinglink').click(function(event) {
+    event.preventDefault();
+    var priceScroll = $(this).attr("href");
+	$('html,body').animate({scrollTop: $(priceScroll).offset().top},1500, 'easeInOutExpo');
+	return false;
+});
+
+  $('.featureslink').click(function(event){
+	event.preventDefault();
+	  var featuresScroll = $(this).attr("href")
+	$('html, body').animate({scrollTop : $(featuresScroll).offset().top},1500, 'easeInOutExpo');
+});
+	
+
+  $(".contactlink").click(function(event) {
+    event.preventDefault();
+    var contactScroll = $(this).attr("href");
+	$('html,body').animate({scrollTop: $(contactScroll).offset().top},1500, 'easeInOutExpo');
+});
+
+  // Scroll screen to target element
+
+ 
+
 
   var siteMenuClone = function() {
 
@@ -136,9 +155,9 @@
 
 
 })(jQuery);
-
 AOS.init({
 	easing: 'ease',
 	duration: 1000,
 	once: true
 });
+

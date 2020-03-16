@@ -131,7 +131,6 @@ figure figcaption {
 }
 
 /* Feature 1 */
-
 .feature-1 .wrap-icon {
   margin: 0 auto;
   height: 100px;
@@ -142,8 +141,25 @@ figure figcaption {
   box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
 }
 
-.feature-1 .wrap-icon.icon-1 {
-  background: linear-gradient(-45deg, #3b87bd, #2d71a2);
+.feature-1 .wrap-icon.icon{
+  display: inline-block;
+  margin: 0 20px 0 0;
+  vertical-align: middle;
+  background-position: 50% 50%;
+  background-size: 90%;
+  background-repeat: no-repeat;
+}
+
+.icon--1 {
+  background: url(/img/icon_2.png);
+}
+
+.icon--2 {
+  background: url(/img/icon_1.png);
+}
+
+.icon--3 {
+  background: url(/img/icon_3.png);
 }
 
 .feature-1 .wrap-icon .icon {
@@ -152,17 +168,19 @@ figure figcaption {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  color: #fff;
+ 
   font-size: 2.5rem;
 }
 
 .feature-1 h3 {
+  margin: 1em;
   font-size: 20px;
 }
 
 .feature-1 p {
   color: #b1b1b1;
 }
+
 
 /* Step */
 
@@ -323,12 +341,23 @@ figure figcaption {
   border: 2px solid #2d71a1;
 }
 
+
+/*Contact Section*/
+ 
+.contact-section {
+  background: linear-gradient(to right, #8eaff1 0%, #d4f0f5 100%);
+  color:black;
+}
+
+
+
 /* CTA Section */
 
 .cta-section {
   background: linear-gradient(to right, #274685 0%, #3db3c5 100%);
   color: #fff;
 }
+
 
 .cta-section h2 {
   color: #fff;
@@ -718,22 +747,21 @@ figure figcaption {
   position: absolute;
   top: -50%;
   overflow: hidden;
-  left: 0;
-  box-shadow: 0 15px 50px 0 rgba(0, 0, 0, 0.3);
+  left: -5em;
   border-radius: 30px;
 }
 
-.hero-section .iphone-wrap .phone-2,
-.hero-section .iphone-wrap .phone-1 {
-  width: 250px;
-}
 
 .hero-section .iphone-wrap .phone-2 {
   margin-top: 50px;
-  margin-left: 100px;
-  width: 250px;
+  width: 30em;
 }
 
+@media only screen and (max-width:992px){
+  .hero-section .iphone-wrap .phone-2{
+    display: none;
+  }
+}
 /*--------------------------------------------------------------
 # Nav
 --------------------------------------------------------------*/
@@ -1164,9 +1192,11 @@ figure figcaption {
 
 .footer {
   padding: 5rem 0 2.5rem 0;
+  background-color: #000;
 }
 
 .footer h3 {
+  color: white;
   font-size: 18px;
   margin-bottom: 30px;
 }
@@ -1176,7 +1206,7 @@ figure figcaption {
 }
 
 .footer a {
-  color: #000;
+  color: white;
 }
 
 .footer .copyright {

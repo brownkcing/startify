@@ -14,24 +14,26 @@
     return false;
   });
 
-  $('.pricinglink').click(function(event) {
-    event.preventDefault();
+  $('.pricinglink').click(function(e) {
+    e.preventDefault();
     var priceScroll = $(this).attr("href");
 	$('html,body').animate({scrollTop: $(priceScroll).offset().top},1500, 'easeInOutExpo');
 	return false;
 });
 
-  $('.featureslink').click(function(event){
-	event.preventDefault();
+  $('.featureslink').click(function(e){
+	e.preventDefault();
 	  var featuresScroll = $(this).attr("href")
 	$('html, body').animate({scrollTop : $(featuresScroll).offset().top},1500, 'easeInOutExpo');
+	return false;
 });
 	
 
-  $(".contactlink").click(function(event) {
-    event.preventDefault();
+  $(".contactlink").click(function(e) {
+    e.preventDefault();
     var contactScroll = $(this).attr("href");
 	$('html,body').animate({scrollTop: $(contactScroll).offset().top},1500, 'easeInOutExpo');
+	return false;
 });
 
   // Scroll screen to target element

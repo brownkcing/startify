@@ -350,7 +350,7 @@
             </div>
 
             <div class="col-md-6 mb-5 mb-md-0"  data-aos="fade-up">
-              <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <form name="contactform" action="forms/contact.php" method="post" role="form" class="php-email-form">
             
                 <div class="row">
                   <div class="col-md-6 form-group">
@@ -359,17 +359,17 @@
                     <div class="validate"></div>
                   </div>
                   <div class="col-md-6 form-group">
-                    <label for="name">Email</label>
+                    <label for="email">Email</label>
                     <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
                     <div class="validate"></div>
                   </div>
                   <div class="col-md-12 form-group">
-                    <label for="name">Subject</label>
+                    <label for="subject">Subject</label>
                     <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
                     <div class="validate"></div>
                   </div>
                   <div class="col-md-12 form-group">
-                    <label for="name">Message</label>
+                    <label for="message">Message</label>
                     <textarea class="form-control" name="message" cols="30" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
                     <div class="validate"></div>
                   </div>

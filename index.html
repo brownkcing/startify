@@ -350,7 +350,7 @@
             </div>
 
             <div class="col-md-6 mb-5 mb-md-0"  data-aos="fade-up">
-              <form name="contactform" action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <form name="contactform" id="contactform" action="forms/contact.php" method="post" role="form" class="php-email-form">
             
                 <div class="row">
                   <div class="col-md-6 form-group">
@@ -383,10 +383,12 @@
                   </div>
   
                   <div class="col-md-6 form-group">
+                    <button type="submit" id="form-submit" class="btn btn-success btn-lg pull-right ">Submit</button>
                     <input type="submit" class="btn btn-light d-block" value="Send Message">
+                    <div id="msgSubmit" class="h3 text-center hidden"></div>
                   </div>
                 </div>
-              </form>
+              </form>g
             </div>
           </div>
         </div>
@@ -476,7 +478,10 @@
   <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script>
 
   <!-- Main JS -->
-  <script src="js/main.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <script type="text/javascript" src="js/contact.js"></script>
+  <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+  <script type="text/javascript" src="js/validator.min.js"></script>
 
 </body>
 

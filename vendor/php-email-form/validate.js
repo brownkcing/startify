@@ -13,7 +13,7 @@
         // Send Ajax Request
         var the_request = $.ajax({
             type: 'POST', // Request Type POST, GET, etc.
-            url: "../forms/contact.php",
+            url: "/forms/contact.php",
             data: form_data
         });
          

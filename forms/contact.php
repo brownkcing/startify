@@ -1,66 +1,48 @@
 <?php
 
-$errorMSG = "";
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-// NAME
-if (empty($_POST["name"])) {
-    $errorMSG = "Name is required ";
-} else {
-    $name = $_POST["name"];
-}
+        # FIX: Replace this email with recipient email
+        $mail_to = "brownkcing@gmail.com";
+        
+        # Sender Data
+        $subject = trim($_POST["subject"]);
+        $name = str_replace(array("\r","\n"),array(" "," ") , strip_tags(trim($_POST["name"])));
+        $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
+        $message = trim($_POST["message"]);
+        
+        if ( empty($name) OR !filter_var($email, FILTER_VALIDATE_EMAIL) OR empty($subject) OR empty($message)) {
+            # Set a 400 (bad request) response code and exit.
+            http_response_code(400);
+            echo "Please complete the form and try again.";
+            exit;
+        }
+        
+        # Mail Content
+        $content = "Name: $name\n";
+        $content .= "Email: $email\n\n";
+        $content .= "Phone: $subject\n";
+        $content .= "Message:\n$message\n";
 
-// EMAIL
-if (empty($_POST["email"])) {
-    $errorMSG .= "Email is required ";
-} else {
-    $email = $_POST["email"];
-}
+        # email headers.
+        $headers = "From: $name <$email>";
 
-// SUBJECT
-if (empty($_POST["subjct"])) {
-    $errorMSG .= "Email is required ";
-} else {
-    $email = $_POST["subject"];
-}
+        # Send the email.
+        $success = mail($mail_to, $subject, $content, $headers);
+        if ($success) {
+            # Set a 200 (okay) response code.
+            http_response_code(200);
+            echo "Thank You! Your message has been sent.";
+        } else {
+            # Set a 500 (internal server error) response code.
+            http_response_code(500);
+            echo "Oops! Something went wrong, we couldn't send your message.";
+        }
 
-// MESSAGE
-if (empty($_POST["message"])) {
-    $errorMSG .= "Message is required ";
-} else {
-    $message = $_POST["message"];
-}
-
-
-$EmailTo = "brownkcing@gmail.com";
-$SubjectTo = "New Message Received";
-
-// prepare email body text
-$Body = "";
-$Body .= "Name: ";
-$Body .= $name;
-$Body .= "\n";
-$Body .= "Email: ";
-$Body .= $email;
-$Body .= "\n";
-$Body .= "Subject: ";
-$Body .= $subject;
-$Body .= "\n";
-$Body .= "Message: ";
-$Body .= $message;
-$Body .= "\n";
-
-// send email
-$success = mail($EmailTo, $SubjectTo, $Body, "From:".$email);
-
-// redirect to success page
-if ($success && $errorMSG == ""){
-   echo "success";
-}else{
-    if($errorMSG == ""){
-        echo "Something went wrong :(";
     } else {
-        echo $errorMSG;
+        # Not a POST request, set a 403 (forbidden) response code.
+        http_response_code(403);
+        echo "There was a problem with your submission, please try again.";
     }
-}
 
 ?>

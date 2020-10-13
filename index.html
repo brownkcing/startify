@@ -477,6 +477,8 @@
                 method="POST"
                 role="form"
                 data-netlify="true"
+                required
+                aria-required="true"
               >
                 <div class="row">
                   <div class="col-md-6 form-group">
@@ -528,21 +530,13 @@
                     <div></div>
                   </div>
                   <div id="form-messages"></div>
-
-                  <div class="col-md-12 mb-3">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">
-                      Your message has been sent. Thank you!
-                    </div>
-                  </div>
-
                   <div class="col-md-6 form-group">
                     <button
                       type="submit"
                       id="form-submit"
                       class="btn btn-success btn-lg pull-right"
-                    >
+                      data-toggle="modal" data-target="#contact-form"
+                      >
                       Submit
                     </button>       
                   </div>

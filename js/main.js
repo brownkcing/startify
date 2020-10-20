@@ -100,7 +100,7 @@
 			e.preventDefault();
 
 			if ( $('body').hasClass('offcanvas-menu') ) {
-				$('body').removeClass('offcanvas-menu');
+				$('body').removeClass('offcanvas-menu');iu97
 				$('body').find('.js-menu-toggle').removeClass('active');
 			} else {
 				$('body').addClass('offcanvas-menu');

@@ -42,7 +42,7 @@ if (contactForm) {
         const formData = 'form-name=' + theForm.name + '&' + serialize(theForm);
         const options = {
             method: 'POST',
-            
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: formData
         };
 

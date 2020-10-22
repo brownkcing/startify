@@ -1,4 +1,4 @@
-const contactForm = document.getElementById('js-contact-form');
+const contactForm = document.getElementById('contact-form');
 if (contactForm) {
     const serialize = function (form) {
         var field,

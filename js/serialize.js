@@ -39,7 +39,7 @@ if (contactForm) {
         e.preventDefault();
 
         const theForm = e.currentTarget;
-        const formData = 'form-name=' + theForm.name + '&' + serialize(theForm);
+        const formData = 'contact-form=' + theForm.name + '&' + serialize(theForm);
         const options = {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },

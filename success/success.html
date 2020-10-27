@@ -1,39 +1,53 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0;url=https://startyfy.netlify.app/" />
-    <title>Contact</title>
-  </head>
-  <body>
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal">X</button>
-      <h1>Lab 6</h1>
-    </div>
-    <div class="modal-body">
-      <div class="panel panel-default">
-        <div class="panel-heading text-center">
-         Thank You
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="portfolio-modal modal fade" id="portfolioModal93" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <h2>Image</h2>
+                                <p class="item-intro text-muted">Example text</p>
+                                <p>More example text</p>
+                                <img class="img-responsive img-centered" src="img/image1.jpg" alt="">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Window</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="modal-footer">
-        <div class="panel-footer">
-          <input type="button" value="Find Employee" id="empbutton" />
-          <div class="col-xs-10" id="lblstatus"></div>
-        </div>
-      </div>
     </div>
 
-    <script type="text/javascript">
-      // Get URL
-      var url = window.location.href;
-      // Get DIV
-      var msg = document.getElementById('success');
-      // Check if URL contains the keyword
-      if( url.search( 'success' ) > 0 ) {
-        // Display the message
-        msg.style.display = "block";
-      }
-      </script>
-  </body>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            // get the current URL
+            var url = $(location).attr('href');
+
+            // if the URL ends with the anchor #portfolioModal93 then we want to open the modal
+            if(url == 'http://test.dev/mainportfolio2.html#portfolioModal93') {
+                $('#portfolioModal93').modal('show');
+            }
+        });
+    </script>
+</body>
 </html>

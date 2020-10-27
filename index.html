@@ -478,6 +478,7 @@
                 role="form"
                 data-netlify="true"
                 enctype="multipart/form-data"
+                onsubmit="return myModal(this)"
               >
                 <div class="row">
                   <div class="col-md-6 form-group">
@@ -654,5 +655,27 @@
     <script type="text/javascript" src="js/netlifyJquery.js"></script>
     <!-- <script type="text/javascript" src="js/serialize.js"></script> -->
     <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+
+    <script type="text/javascript" >function myModal(f)
+      {
+          var form=f,
+              modal=$('<div/>', {
+                  'id':'alert',
+                  'html':'<iframe src="url"></iframe>'
+              })
+             .dialog({
+                 'title':'Iframe in a modal window',
+                 'modal':true,
+                 'width':350,
+                 'height':'auto',
+                 'buttons': {
+                     'OK': function() { 
+                         $(this).dialog( "close" ); 
+                         // do something, maybe call form.submit();
+                      }
+                  }
+          });
+          return false;
+      } </script>
   </body>
 </html>

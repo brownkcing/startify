@@ -1,8 +1,11 @@
-$("form").on('submit', function(e){
-    $.post("success.html", $(this).parent("form").serialize(),
+$("contactform").submit(function(e) {
+    e.preventDefault();
+  
+    var $form = $(this);
+    $.post($form.attr("action"), $form.serialize()).then(function() {
+        $('#registration').modal('show');
         function(){
-            window.location.href = "wallet.php";
+            window.location.href = "success.html";
         }
-    );
-    e.preventDefault();  
-});
+    });
+  });

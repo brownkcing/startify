@@ -48,10 +48,32 @@ if (contactForm) {
 
         fetch('/', options)
             .then(function (response) {
-                window.location.assign(theForm.action);
+                openModal(theForm.action);
             })
             .catch(function (error) {
                 console.log(error);
             });
     });
 }
+
+
+function openModal() {
+    let modalTrigger = document.querySelectorAll('.modal-trigger');
+  
+    modalTrigger.forEach(function(trigger) {
+      trigger.addEventListener('click', function(event) {
+  
+        // remove "#" from #modal
+        const target = this.getAttribute('href').substr(1);
+  
+        // use dynamic target to reference given modal
+        const modalWindow = document.getElementById(target);
+  
+        if(modalWindow.classList) {
+          modalWindow.classList.add('open');
+        }
+  
+        event.preventDefault();
+      });
+    });
+  }

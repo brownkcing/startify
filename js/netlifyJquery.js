@@ -1,10 +1,8 @@
-$("contactform").submit(function(e) {
-    e.preventDefault();
-  
-    var $form = $(this);
-    $.post($form.attr("action"), $form.serialize()).then(function() {
-        $('#registration').modal('show');
-        return false;
-    });
-  });
-
+$("form").on('submit', function(e){
+    $.post("success.html", $(this).parent("form").serialize(),
+        function(){
+            window.location.href = "wallet.php";
+        }
+    );
+    e.preventDefault();  
+});

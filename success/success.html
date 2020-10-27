@@ -9,46 +9,22 @@
 </head>
 
 <body>
-  <div id="success">Thank you!!</div>
-    <!-- <div class="portfolio-modal modal fade" id="success" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
-                            <div class="modal-body">
-                                <h2>Image</h2>
-                                <p class="item-intro text-muted">Example text</p>
-                                <p>More example text</p>
-                                <img class="img-responsive img-centered" src="img/image1.jpg" alt="">
-                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Window</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">X</button>
+    <h1>Lab 6</h1>
+  </div>
+  <div class="modal-body">
+    <div class="panel panel-default">
+      <div class="panel-heading text-center">
+        Employee Information
+      </div>
     </div>
-
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function() {
-
-            // get the current URL
-            var url = $(location).attr('href');
-
-            // if the URL ends with the anchor #portfolioModal93 then we want to open the modal
-            if(url == 'http://startyfy.netlify.app/success/success') {
-                $('#success').modal('show');
-            }
-        });
-    </script> -->
+    <div class="modal-footer">
+      <div class="panel-footer">
+        <input type="button" value="Find Employee" id="empbutton" />
+        <div class="col-xs-10" id="lblstatus"></div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

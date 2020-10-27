@@ -1,9 +1,10 @@
-$("#my-form").submit(function(e) {
+$("contactform").submit(function(e) {
     e.preventDefault();
   
     var $form = $(this);
     $.post($form.attr("action"), $form.serialize()).then(function() {
-      alert("Thank you!");
+        $('#registration').modal('show');
+        e.preventDefault();
     });
   });
 

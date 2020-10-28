@@ -1,18 +1,27 @@
-$("#contactform").submit(function(e) {
-    e.preventDefault();
+// $("#contactform").submit(function(e) {
+//     e.preventDefault();
   
-    var $form = $(this);
-    $.post($form.attr("action"), $form.serialize()).then(function() {
-        $('#registration').modal('show');
-        function(){
-            window.location.href = "success.html";
-        }
-    });
-  });
+//     var $form = $(this);
+//     $.post($form.attr("action"), $form.serialize()).then(function() {
+//         $('#registration').modal('show');
+//         function(){
+//             window.location.href = "success.html";
+//         }
+//     });
+//   });
 
-  $(document).ready(function() {
-    $('#form-submit').click(function (e) {
-       e.preventDefault();
-       $('#registration').modal('show');
-    });
-});
+  $(document).ready(function(){
+    $('#contactform').submit(function(e) {
+     var postData = $(this).serializeArray();
+     var formURL = $(this).attr("action");
+     $.ajax({
+         url: "/success/success.html",
+         type: "POST",
+         data: postData,
+         success: function(data) {
+         console.log('success!')
+       }
+     });
+     e.preventDefault(); //STOP default action
+ });
+ });

@@ -1,4 +1,4 @@
-$("contactform").submit(function(e) {
+$("#contactform").submit(function(e) {
     e.preventDefault();
   
     var $form = $(this);
@@ -9,3 +9,5 @@ $("contactform").submit(function(e) {
         }
     });
   });
+
+  

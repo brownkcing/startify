@@ -15,7 +15,7 @@
      var postData = $(this).serializeArray();
      var formURL = $(this).attr("action");
      $.ajax({
-         url: "/success/success.html",
+         url: formURL,
          type: "POST",
          data: postData,
          success: function(data) {

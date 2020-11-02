@@ -1,0 +1,37 @@
+.success-p {
+  background: linear-gradient(
+      to right,
+      rgba(39, 70, 133, 0.8) 0%,
+      rgba(61, 179, 197, 0.8) 100%
+    ),
+    url(../img/success-bg.jpg);
+  position: relative;
+}
+.success-p .wave {
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+  bottom: -150px;
+}
+
+.success-p .wave svg {
+  width: 100%;
+}
+
+.success-p,
+.success-p > .container > .row {
+  height: 100vh;
+  min-height: 880px;
+}
+
+.success-p.inner-page {
+  height: 60vh;
+  min-height: 0;
+}
+
+.success-p.inner-page .hero-text {
+  -webkit-transform: translateY(-150px);
+  transform: translateY(-150px);
+  margin-top: -120px;
+}

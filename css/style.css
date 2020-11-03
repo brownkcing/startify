@@ -1378,7 +1378,7 @@ figure figcaption {
 }
 
 .success h1 {
-  font-size: 3.5rem;
+  font-size: 5rem;
   color: #fff;
   font-weight: 700;
   margin-bottom: 30px;
@@ -1386,7 +1386,7 @@ figure figcaption {
 }
 
 .success p {
-  font-size: 18px;
+  font-size: 28px;
   color: #fff;
   text-align: center;
 }
